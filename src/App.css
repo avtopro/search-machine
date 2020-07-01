@@ -1,38 +1,130 @@
-.App {
-  text-align: center;
+.search-app {
+    display: grid;
+    grid-template-rows: 44px max-content auto max-content;
+    grid-template-areas:
+        'head'
+        'stat'
+        'feed'
+        'foot';
+
+    height: calc(100vh - 40px);
+    border: 1px solid #bbb;
+    border-radius: 3px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.search-app__head {
+    grid-area: head;
+    display: flex;
+    border-bottom: 1px solid #bbb;
+    padding: 1px;
+    overflow-x: auto;
+    -webkit-scrollbar-width: thin;
+    scrollbar-width: thin;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.search-app__foot {
+    grid-area: foot;
+    display: flex;
+    padding: 0.5em 0 0.75em;
+    border-top: 1px solid #bbb;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.search-app__foot:empty {
+    display: none;
 }
 
-.App-link {
-  color: #61dafb;
+.search-app__nav {
+    display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search-app__nav a {
+    margin-right: 10px;
+    font-size: 0.875em;
+}
+
+.search-app__nav button {
+    margin-right: 1px;
+    max-width: 20em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.search-app__nav__car-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #418aca;
+    fill: #fff;
+}
+
+.search-app__form {
+    display: flex;
+    flex-grow: 1;
+}
+
+.search-app__form input[type='search'] {
+    border: none;
+    padding: 0 1em;
+    flex-grow: 1;
+}
+
+.search-app__form button {
+    margin-right: 1px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.search-app__state {
+    grid-area: stat;
+    padding: 1em 0;
+    line-height: 1.25;
+}
+
+.search-app__results,
+.search-app__results-tree {
+    grid-area: feed;
+    margin-bottom: 1em;
+    overflow-y: auto;
+    -webkit-scrollbar-width: thin;
+    scrollbar-width: thin;
+}
+
+.search-app__results li {
+    margin-bottom: 0.5em;
+}
+
+.search-app__results a,
+.search-app__results-tree a {
+    cursor: pointer;
+    font-size: 0.875em;
+}
+
+.search-app__results a:first-of-type {
+    display: block;
+}
+
+.search-app__results a + a {
+    display: inline-block;
+    line-height: 1;
+    font-size: 0.75em;
+    margin-right: 1em;
+    margin-bottom: 0.25em;
+    font-weight: bold;
+}
+
+.search-app__controls {
+    grid-area: ctrl;
+    display: flex;
+}
+
+.danger {
+    color: red;
+}
+
+.search-app__state,
+.search-app__results,
+.search-app__results-tree,
+.search-app__foot {
+    padding-left: 15px;
+    padding-right: 15px;
 }

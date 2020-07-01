@@ -1,0 +1,40 @@
+.ctgtree,
+.ctgtree ul {
+    margin: 0;
+    list-style: none;
+    padding-left: 0;
+}
+
+.ctgtree {
+    margin: -0.5em 0;
+}
+
+.ctgtree figure {
+    margin: 0;
+}
+
+.ctgtree li {
+    margin: 0.5em 0 0.5em 15px;
+    line-height: 1;
+}
+
+.ctgtree > li {
+    margin-left: 0;
+}
+
+.ctgtree__link {
+    display: block;
+    cursor: pointer;
+}
+
+.ctgtree__link--active {
+    font-weight: bold;
+}
+
+.ctgtree__link--plus {
+    margin-left: 0;
+}
+
+.ctgtree__link--minus {
+    margin-left: 0;
+}
